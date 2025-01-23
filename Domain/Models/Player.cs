@@ -1,6 +1,7 @@
-﻿using Domain.Model.Common;
+﻿using Domain.Models.Common;
+using Domain.Models.Enum;
 
-namespace Domain.Model;
+namespace Domain.Models;
 
 public class Player : Entity
 {

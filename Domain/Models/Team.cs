@@ -1,6 +1,6 @@
-﻿using Domain.Model.Common;
+﻿using Domain.Models.Common;
 
-namespace Domain.Model;
+namespace Domain.Models;
 
 public class Team : Entity
 {
