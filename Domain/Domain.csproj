@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Features\Teams\Add\" />
+      <Folder Include="Features\Teams\Delete\" />
+      <Folder Include="Features\Teams\Get\" />
+      <Folder Include="Features\Teams\LinkPlayer\" />
+      <Folder Include="Features\Teams\Update\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.11.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+    </ItemGroup>
+
 </Project>
