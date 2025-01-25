@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Domain.Features.Players.Update;
 
-public class UpdatePlayerHandler : IRequestHandler<UpdatePlayerRepository>
+public class UpdatePlayerHandler : IRequestHandler<UpdatePlayerRequest>
 {
     private readonly IPlayerRepository _playerRepository;
 
@@ -13,7 +13,7 @@ public class UpdatePlayerHandler : IRequestHandler<UpdatePlayerRepository>
         _playerRepository = playerRepository;
     }
 
-    public async Task Handle(UpdatePlayerRepository request, CancellationToken cancellationToken)
+    public async Task Handle(UpdatePlayerRequest request, CancellationToken cancellationToken)
     {
         var player = new Player
         {

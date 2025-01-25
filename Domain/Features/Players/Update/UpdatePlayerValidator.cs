@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace Domain.Features.Players.Update;
 
-public class UpdatePlayerValidator : AbstractValidator<UpdatePlayerRepository>
+public class UpdatePlayerValidator : AbstractValidator<UpdatePlayerRequest>
 {
     public UpdatePlayerValidator(IPlayerRepository playerRepository, ITeamRepository teamRepository)
     {
