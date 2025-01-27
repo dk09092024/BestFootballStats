@@ -14,7 +14,7 @@ public class GetTeamQueryHandler : IRequestHandler<GetTeamQuery, GetTeamResponse
 
     public async Task<GetTeamResponse> Handle(GetTeamQuery request, CancellationToken cancellationToken)
     {
-        var team = await _teamRepository.GetByIdAsync(request.Id);
+        var team = await _teamRepository.GetByIdAsync(request.Id, cancellationToken);
         return new GetTeamResponse(team);
     }
 }

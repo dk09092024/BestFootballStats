@@ -14,7 +14,7 @@ public class GetLeagueHandler : IRequestHandler<GetLeagueQuery, GetLeagueResult>
 
     public async Task<GetLeagueResult> Handle(GetLeagueQuery query, CancellationToken cancellationToken)
     {
-        var league = await _leagueRepository.GetByIdAsync(query.Id);
+        var league = await _leagueRepository.GetByIdAsync(query.Id,cancellationToken);
         return new GetLeagueResult(league);
     }
 }

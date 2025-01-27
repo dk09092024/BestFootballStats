@@ -14,7 +14,7 @@ public class GetMatchHandler : IRequestHandler<GetMatchQuery, GetMatchResult>
 
     public async Task<GetMatchResult> Handle(GetMatchQuery query, CancellationToken cancellationToken)
     {
-        var match = await _matchRepository.GetByIdAsync(query.Id);
+        var match = await _matchRepository.GetByIdAsync(query.Id,cancellationToken);
         return new GetMatchResult(match);
     }
 }

@@ -14,8 +14,8 @@ public class UpdateLeagueHandler : IRequestHandler<UpdateLeagueRequest>
 
     public async Task Handle(UpdateLeagueRequest request, CancellationToken cancellationToken)
     {
-        var league = await _leagueRepository.GetByIdAsync(request.Id);
+        var league = await _leagueRepository.GetByIdAsync(request.Id,cancellationToken);
         league.Name = request.Name;
-        await _leagueRepository.UpdateAsync(league);
+        await _leagueRepository.UpdateAsync(league,cancellationToken);
     }
 }

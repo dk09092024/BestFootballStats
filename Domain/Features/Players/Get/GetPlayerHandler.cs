@@ -14,7 +14,7 @@ public class GetPlayerHandler : IRequestHandler<GetPlayerQuery, GetPlayerResult>
 
     public async Task<GetPlayerResult> Handle(GetPlayerQuery query, CancellationToken cancellationToken)
     {
-        var player = await _playerRepository.GetByIdAsync(query.Id);
+        var player = await _playerRepository.GetByIdAsync(query.Id,cancellationToken);
         return new GetPlayerResult(player);
     }
 }

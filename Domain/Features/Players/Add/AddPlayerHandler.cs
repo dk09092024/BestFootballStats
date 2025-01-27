@@ -24,7 +24,7 @@ public class AddPlayerHandler : IRequestHandler<AddPlayerRequest, AddPlayerResul
             Id = default,
             CreatedAt = default
         };
-        await _playerRepository.AddAsync(player);
+        await _playerRepository.AddAsync(player,cancellationToken);
         return new AddPlayerResult(player.Id);
     }
 }

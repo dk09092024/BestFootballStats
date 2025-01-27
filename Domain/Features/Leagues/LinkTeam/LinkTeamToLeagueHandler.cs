@@ -16,6 +16,6 @@ public class LinkTeamToLeagueHandler : IRequestHandler<LinkTeamToLeagueRequest>
 
     public async Task Handle(LinkTeamToLeagueRequest request, CancellationToken cancellationToken)
     {
-        await _teamRepository.LinkToLeague(request.TeamId,request.LeagueId);
+        await _teamRepository.LinkToLeague(request.TeamId,request.LeagueId,cancellationToken);
     }
 }

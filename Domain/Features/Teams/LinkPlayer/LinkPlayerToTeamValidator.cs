@@ -11,13 +11,13 @@ public class LinkPlayerToTeamValidator : AbstractValidator<LinkPlayerToTeamReque
             .NotEmpty()
             .NotNull()
             .WithMessage("PlayerId is required.")
-            .MustAsync((id, token) => playerRepository.ExistsAsync(id))
+            .MustAsync((id, cancellationToken) => playerRepository.ExistsAsync(id, cancellationToken))
             .WithMessage("Player not found.");
         RuleFor(x => x.TeamId)
             .NotEmpty()
             .NotNull()
             .WithMessage("TeamId is required.")
-            .MustAsync((id, token) => teamRepository.ExistsAsync(id))
+            .MustAsync((id, cancellationToken) => teamRepository.ExistsAsync(id, cancellationToken))
             .WithMessage("Team not found.");
     }
 }
