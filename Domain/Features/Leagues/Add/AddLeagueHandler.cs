@@ -21,7 +21,7 @@ public class AddLeagueHandler : IRequestHandler<AddLeagueRequest, AddLeagueResul
             CreatedAt = default,
             Name = request.Name
         };
-        await _leagueRepository.AddAsync(league);
+        await _leagueRepository.AddAsync(league,cancellationToken);
         return new AddLeagueResult(league.Id);
     }
 }

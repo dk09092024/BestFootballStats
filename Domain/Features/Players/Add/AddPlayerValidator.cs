@@ -21,7 +21,7 @@ public class AddPlayerValidator : AbstractValidator<AddPlayerRequest>
         RuleFor(x => x.TeamId)
             .NotEmpty()
             .WithMessage("Team ID is required")
-            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x))
+            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("Team does not exist");
     }
 }

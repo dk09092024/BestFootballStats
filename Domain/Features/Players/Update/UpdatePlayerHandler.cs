@@ -23,6 +23,6 @@ public class UpdatePlayerHandler : IRequestHandler<UpdatePlayerRequest>
             TeamId = default,
             CreatedAt = default
         };
-        await _playerRepository.UpdateAsync(player);
+        await _playerRepository.UpdateAsync(player,cancellationToken);
     }
 }

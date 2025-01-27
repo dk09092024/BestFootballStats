@@ -10,12 +10,12 @@ public class LinkTeamToLeagueValidator : AbstractValidator<LinkTeamToLeagueReque
         RuleFor(x => x.LeagueId)
             .NotEmpty()
             .WithMessage("League ID is required.")
-            .MustAsync(async (x, cancellationToken) => await leagueRepository.ExistsAsync(x))
+            .MustAsync(async (x, cancellationToken) => await leagueRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("League does not exist.");
         RuleFor(x => x.TeamId)
             .NotEmpty()
             .WithMessage("Teams ID is required.")
-            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x))
+            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("Teams does not exist.");
     }
 }

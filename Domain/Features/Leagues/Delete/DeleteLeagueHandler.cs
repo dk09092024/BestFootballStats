@@ -15,6 +15,6 @@ public class DeleteLeagueHandler : IRequestHandler<DeleteLeagueRequest>
 
     public async Task Handle(DeleteLeagueRequest request, CancellationToken cancellationToken)
     {
-        await _leagueRepository.DeleteAsync(request.Id);
+        await _leagueRepository.DeleteAsync(request.Id,cancellationToken);
     }
 }

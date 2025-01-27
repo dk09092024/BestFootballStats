@@ -11,8 +11,8 @@ public class UpdateTeamHandler : IRequestHandler<UpdateTeamRequest>
 
     public async Task Handle(UpdateTeamRequest request, CancellationToken cancellationToken)
     {
-        var team = await _teamRepository.GetByIdAsync(request.Id);
+        var team = await _teamRepository.GetByIdAsync(request.Id, cancellationToken);
         team.Name = request.Name;
-        await _teamRepository.UpdateAsync(team);
+        await _teamRepository.UpdateAsync(team, cancellationToken);
     }
 }

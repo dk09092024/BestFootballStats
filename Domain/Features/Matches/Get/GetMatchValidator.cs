@@ -10,7 +10,7 @@ public class GetMatchValidator : AbstractValidator<GetMatchQuery>
         RuleFor(x => x.Id)
             .NotEmpty()
             .WithMessage("Match ID is required.")
-            .MustAsync(async (x, cancellationToken) => await matchRepository.ExistsAsync(x))
+            .MustAsync(async (x, cancellationToken) => await matchRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("Match does not exist.");
     }
 }

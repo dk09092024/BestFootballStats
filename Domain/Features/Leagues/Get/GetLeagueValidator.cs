@@ -10,7 +10,7 @@ public abstract class GetLeagueValidator : AbstractValidator<GetLeagueQuery>
         RuleFor(x => x.Id)
             .NotEmpty()
             .WithMessage("League ID is required.")
-            .MustAsync(async (x,cancellationToken)=> await leagueRepository.ExistsAsync(x))
+            .MustAsync(async (x,cancellationToken)=> await leagueRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("League does not exist.");
     }
 }

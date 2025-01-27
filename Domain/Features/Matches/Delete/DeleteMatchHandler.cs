@@ -14,6 +14,6 @@ public class DeleteMatchHandler : IRequestHandler<DeleteMatchRequest>
 
     public async Task Handle(DeleteMatchRequest request, CancellationToken cancellationToken)
     {
-        await _matchRepository.DeleteAsync(request.Id);
+        await _matchRepository.DeleteAsync(request.Id,cancellationToken);
     }
 }

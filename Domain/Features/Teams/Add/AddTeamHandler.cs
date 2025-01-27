@@ -21,7 +21,7 @@ public class AddTeamHandler : IRequestHandler<AddTeamRequest, AddTeamResponse>
             Id = default,
             CreatedAt = default
         };
-        await _teamRepository.AddAsync(team);
+        await _teamRepository.AddAsync(team,cancellationToken);
         return new AddTeamResponse(team.Id);
     }
 }

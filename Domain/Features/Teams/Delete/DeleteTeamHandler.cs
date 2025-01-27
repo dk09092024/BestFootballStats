@@ -11,6 +11,6 @@ public class DeleteTeamHandler : IRequestHandler<DeleteTeamRequest>
 
     public async Task Handle(DeleteTeamRequest request, CancellationToken cancellationToken)
     {
-        await _teamRepository.DeleteAsync(request.Id);
+        await _teamRepository.DeleteAsync(request.Id,cancellationToken);
     }
 }

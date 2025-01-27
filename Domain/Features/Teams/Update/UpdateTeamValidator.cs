@@ -11,7 +11,7 @@ public class UpdateTeamValidator : AbstractValidator<UpdateTeamRequest>
             .NotEmpty()
             .NotNull()
             .WithMessage("Id is required.")
-            .MustAsync((id, token) => teamRepository.ExistsAsync(id))
+            .MustAsync((id, cancellationToken) => teamRepository.ExistsAsync(id, cancellationToken))
             .WithMessage("Team not found.");
         RuleFor(x => x.Name)
             .NotNull()

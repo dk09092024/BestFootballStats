@@ -10,7 +10,7 @@ public class UpdatePlayerValidator : AbstractValidator<UpdatePlayerRequest>
         RuleFor(x => x.Id)
             .NotEmpty()
             .WithMessage("Id is required")
-            .MustAsync(async (x, cancellationToken) => await playerRepository.ExistsAsync(x))
+            .MustAsync(async (x, cancellationToken) => await playerRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("Player does not exist");
         RuleFor(x => x.Name)
             .NotEmpty()

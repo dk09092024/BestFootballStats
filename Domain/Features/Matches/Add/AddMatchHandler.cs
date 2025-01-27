@@ -18,6 +18,6 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
             Id = default,
             CreatedAt = default
         };
-        return new(await _matchRepository.AddAsync(match));
+        return new(await _matchRepository.AddAsync(match,cancellationToken));
     }
 }

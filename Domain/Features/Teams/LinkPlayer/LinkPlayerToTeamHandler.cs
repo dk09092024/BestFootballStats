@@ -14,6 +14,6 @@ public class LinkPlayerToTeamHandler : IRequestHandler<LinkPlayerToTeamRequest>
 
     public Task Handle(LinkPlayerToTeamRequest request, CancellationToken cancellationToken)
     {
-        return _playerRepository.LinkToTeam(request.PlayerId, request.TeamId);
+        return _playerRepository.LinkToTeam(request.PlayerId, request.TeamId, cancellationToken);
     }
 }
