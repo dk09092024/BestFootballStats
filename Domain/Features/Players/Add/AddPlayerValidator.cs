@@ -1,11 +1,12 @@
-﻿using Domain.Repositories;
+﻿using Domain.Models.Enum;
+using Domain.Repositories;
 using FluentValidation;
 
 namespace Domain.Features.Players.Add;
 
 public class AddPlayerValidator : AbstractValidator<AddPlayerRequest>
 {
-    public AddPlayerValidator(ITeamRepository teamRepository)
+    public AddPlayerValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty()

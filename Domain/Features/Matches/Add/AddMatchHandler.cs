@@ -18,6 +18,11 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
         _matchRepository = matchRepository;
     }
 
+    public AddMatchHandler(IMatchRepository matchRepository)
+    {
+        _matchRepository = matchRepository;
+    }
+
     public async Task<AddMatchResult> Handle(AddMatchRequest request, CancellationToken cancellationToken)
     {
         var match = new Match

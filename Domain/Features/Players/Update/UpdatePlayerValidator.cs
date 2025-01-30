@@ -5,7 +5,7 @@ namespace Domain.Features.Players.Update;
 
 public class UpdatePlayerValidator : AbstractValidator<UpdatePlayerRequest>
 {
-    public UpdatePlayerValidator(IPlayerRepository playerRepository, ITeamRepository teamRepository)
+    public UpdatePlayerValidator(IPlayerRepository playerRepository)
     {
         RuleFor(x => x.Id)
             .NotEmpty()

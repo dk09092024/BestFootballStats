@@ -3,12 +3,13 @@ using FluentValidation;
 
 namespace Domain.Features.Leagues.Delete;
 
-public abstract class DeleteLeagueRequestValidator : AbstractValidator<DeleteLeagueRequest>
+public class DeleteLeagueValidator : AbstractValidator<DeleteLeagueRequest>
 {
-    public DeleteLeagueRequestValidator(ILeagueRepository leagueRepository)
+    public DeleteLeagueValidator(ILeagueRepository leagueRepository)
     {
         RuleFor(x => x.Id)
             .NotEmpty()
+            .NotNull()
             .WithMessage("League ID is required.")
             .MustAsync(async (x,cancellationToken)=> await leagueRepository.ExistsAsync(x,cancellationToken))
             .WithMessage("League does not exist.");
