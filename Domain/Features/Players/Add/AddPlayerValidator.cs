@@ -1,11 +1,12 @@
-﻿using Domain.Repositories;
+﻿using Domain.Models.Enum;
+using Domain.Repositories;
 using FluentValidation;
 
 namespace Domain.Features.Players.Add;
 
 public class AddPlayerValidator : AbstractValidator<AddPlayerRequest>
 {
-    public AddPlayerValidator(ITeamRepository teamRepository)
+    public AddPlayerValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty()
@@ -18,10 +19,5 @@ public class AddPlayerValidator : AbstractValidator<AddPlayerRequest>
             .WithMessage("Position is required")
             .IsInEnum()
             .WithMessage("Position is invalid");
-        RuleFor(x => x.TeamId)
-            .NotEmpty()
-            .WithMessage("Team ID is required")
-            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x,cancellationToken))
-            .WithMessage("Team does not exist");
     }
 }

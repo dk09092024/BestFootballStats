@@ -15,14 +15,9 @@ public class UpdatePlayerHandler : IRequestHandler<UpdatePlayerRequest>
 
     public async Task Handle(UpdatePlayerRequest request, CancellationToken cancellationToken)
     {
-        var player = new Player
-        {
-            Id = request.Id,
-            Name = request.Name,
-            Position = request.Position,
-            TeamId = default,
-            CreatedAt = default
-        };
+        var player = await _playerRepository.GetByIdAsync(request.Id,cancellationToken);
+        player.Name = request.Name;
+        player.Position = request.Position;
         await _playerRepository.UpdateAsync(player,cancellationToken);
     }
 }

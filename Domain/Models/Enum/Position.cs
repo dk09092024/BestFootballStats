@@ -2,8 +2,8 @@
 
 public enum Position
 {
-    Goalkeeper,
-    Defender,
-    Midfielder,
-    Forward
+    Goalkeeper = 1,
+    Defender = 2,
+    Midfielder = 3,
+    Forward = 4
 }

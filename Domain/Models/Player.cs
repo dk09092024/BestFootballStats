@@ -7,5 +7,5 @@ public class Player : Entity
 {
     public required string Name { get; set; }
     public required Position Position { get; set; }
-    public required Guid TeamId { get; set; }
+    public Guid TeamId { get; set; }
 }

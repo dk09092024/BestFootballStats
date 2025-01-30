@@ -20,11 +20,9 @@ public class AddPlayerHandler : IRequestHandler<AddPlayerRequest, AddPlayerResul
         {
             Name = request.Name,
             Position = (Position)request.Position,
-            TeamId = request.TeamId,
             Id = default,
             CreatedAt = default
         };
-        await _playerRepository.AddAsync(player,cancellationToken);
-        return new AddPlayerResult(player.Id);
+        return new AddPlayerResult(await _playerRepository.AddAsync(player,cancellationToken));
     }
 }
