@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Domain.Features.Teams.Add;
 
-public class AddTeamRequestValidator : AbstractValidator<AddTeamRequest>
+public class AddTeamValidator : AbstractValidator<AddTeamRequest>
 {
-    public AddTeamRequestValidator()
+    public AddTeamValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty()

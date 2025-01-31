@@ -46,11 +46,14 @@
     &lt;TestId&gt;NUnit3x::FEC70594-7B4C-4C7B-9549-5D870260B6FA::net9.0::Domain.Test.Features.Players.Add.AddPlayerValidatorTests.Should_Return_Error_When_Position_Is_Not_In_Enum&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b0349dde_002D179f_002D4315_002D9949_002D5eaf96e015e4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_Return_Error_When_Position_Is_Not_In_Enum #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b0349dde_002D179f_002D4315_002D9949_002D5eaf96e015e4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Return_Error_When_Position_Is_Not_In_Enum #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::FEC70594-7B4C-4C7B-9549-5D870260B6FA::net9.0::Domain.Test.Features.Players.Add.AddPlayerValidatorTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::FEC70594-7B4C-4C7B-9549-5D870260B6FA::net9.0::Domain.Test.Features.Players.Add.AddPlayerHandlerTests.Should_Add_Player&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbe69a17_002Dbb14_002D4a55_002Db114_002D6853503347e7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_Add_Player #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\Compute\RiderProjects\BestFootballStats\Domain.Test" Presentation="&amp;lt;Domain.Test&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>

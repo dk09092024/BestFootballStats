@@ -3,11 +3,11 @@ using MediatR;
 
 namespace Domain.Features.Teams.Get;
 
-public class GetTeamQueryHandler : IRequestHandler<GetTeamQuery, GetTeamResponse>
+public class GetTeamHandler : IRequestHandler<GetTeamQuery, GetTeamResponse>
 {
     private readonly ITeamRepository _teamRepository;
 
-    public GetTeamQueryHandler(ITeamRepository teamRepository)
+    public GetTeamHandler(ITeamRepository teamRepository)
     {
         _teamRepository = teamRepository;
     }
