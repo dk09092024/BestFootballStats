@@ -16,11 +16,12 @@ public class ApplicationContext : DbContext
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=../Infrastructure/Database/Data/app.db");
+        
     }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
+        modelBuilder.HasDefaultSchema("BestFootballStatsApp");
     }
 }

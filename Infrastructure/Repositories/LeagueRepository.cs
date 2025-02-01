@@ -1,6 +1,7 @@
 ﻿using Domain.Models;
 using Domain.Repositories;
 using Infrastructure.Database;
+using Infrastructure.Repositories.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
@@ -19,8 +20,20 @@ public class LeagueRepository : ILeagueRepository
         return await _context.Leagues.AnyAsync(x => x.Id == id,cancellationToken);
     }
 
+    public async Task MustExistAsync(Guid id, CancellationToken cancellationToken)
+    {
+        if (!await ExistsAsync(id, cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<LeagueRepository, League>(id);
+        }
+    }
+
     public async Task<League> GetByIdAsync(Guid id,CancellationToken cancellationToken)
     {
+        if (!await ExistsAsync(id,cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<LeagueRepository,League>(id);
+        }
         return await _context.Leagues.FirstAsync(x => x.Id == id,cancellationToken);
     }
 
@@ -33,12 +46,17 @@ public class LeagueRepository : ILeagueRepository
 
     public async Task UpdateAsync(League entity,CancellationToken cancellationToken)
     {
+        if (!await ExistsAsync(entity.Id,cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<LeagueRepository,League>(entity.Id);
+        }
         _context.Leagues.Update(entity);
         await _context.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(Guid id,CancellationToken cancellationToken)
     {
-        await _context.Leagues.Where(x=> x.Id==id).ExecuteDeleteAsync(cancellationToken);
+        _context.Leagues.Remove(await GetByIdAsync(id,cancellationToken));
+        await _context.SaveChangesAsync(cancellationToken);
     }
 }

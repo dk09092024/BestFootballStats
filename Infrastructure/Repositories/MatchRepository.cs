@@ -1,6 +1,7 @@
 ﻿using Domain.Models;
 using Domain.Repositories;
 using Infrastructure.Database;
+using Infrastructure.Repositories.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
@@ -18,9 +19,20 @@ public class MatchRepository : IMatchRepository
     {
         return await _context.Matches.AnyAsync(x => x.Id == id,cancellationToken);
     }
+    public async Task MustExistAsync(Guid id, CancellationToken cancellationToken)
+    {
+        if (!await ExistsAsync(id, cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<MatchRepository, Match>(id);
+        }
+    }
 
     public async Task<Match> GetByIdAsync(Guid id,CancellationToken cancellationToken)
     {
+        if (!await ExistsAsync(id,cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<MatchRepository,Match>(id);
+        }
         return await _context.Matches.FirstAsync(x => x.Id == id,cancellationToken);
     }
 
@@ -33,12 +45,17 @@ public class MatchRepository : IMatchRepository
 
     public async Task UpdateAsync(Match entity, CancellationToken cancellationToken)
     {
+        if (!await ExistsAsync(entity.Id, cancellationToken))
+        {
+            throw new EntityDoesNotExistExeption<MatchRepository, Match>(entity.Id);
+        }
         _context.Matches.Update(entity);
         await _context.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(Guid id,CancellationToken cancellationToken)
     {
-        await _context.Matches.Where(x => x.Id == id).ExecuteDeleteAsync(cancellationToken);
+        _context.Matches.Remove(await GetByIdAsync(id,cancellationToken));
+        await _context.SaveChangesAsync(cancellationToken);
     }
 }
