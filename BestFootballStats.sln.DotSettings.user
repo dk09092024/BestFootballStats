@@ -1,11 +1,32 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AArgumentNullException_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F79b4b5d07e8c5ac3de172b75667c6bded8e1fa6f42f36d8f6dc2f9e3d568_003FArgumentNullException_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ADatabaseFacade_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fa3a2943740096e0fc472456147a4ca9c22db1be62257205bbba9f0e648c0_003FDatabaseFacade_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ADbContext_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fa0b45f29f34f594814a7b1fbc25fe5ef3c18257956ed4f4fbfa68717db58_003FDbContext_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMatch_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F881b94df1ada40f2f8c71240a283a0fc70144caad05031eb18539ff2f812f67a_003FMatch_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMethodBaseInvoker_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F69ba5438e03a0e3a5d2f133f37405f9e32f9e0abb1fbe0a8cb7145514ff85f_003FMethodBaseInvoker_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AReflect_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fabb88942db67a4ae752ba4ee2bd70983a913ed799eea7e29ebd56049787826_003FReflect_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ARelationalDatabaseFacadeExtensions_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fa63224c3af1f6718f95ae1ed5b4ee895a78fa5f9e3e27ea3f55efbbac2829_003FRelationalDatabaseFacadeExtensions_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1767c4cc_002Da380_002D4504_002Dad0a_002D752e7c0930fe/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MustExistAsync_ShouldThrowException #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.MatchRepositoryTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=25a512d6_002D0a15_002D4fde_002D8cbc_002D6a1830f68c90/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MustExistAsync_ShouldNotThrowException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.MatchRepositoryTests.MustExistAsync_ShouldNotThrowException&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3adef7cf_002D59c2_002D4d0e_002D8f02_002Dbf46ad59965d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Return_Error_When_Position_Is_Not_In_Enum" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::FEC70594-7B4C-4C7B-9549-5D870260B6FA::net9.0::Domain.Test.Features.Players.Add.AddPlayerValidatorTests.Should_Return_Error_When_Position_Is_Not_In_Enum&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=49a93d3c_002D4760_002D4e7f_002D8671_002D1ac4dbed56d3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ApplicationContextTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Database.ApplicationContextTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.LeagueRepositoryTests.AddAsync_ShouldAddLeague&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.LeagueRepositoryTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.MatchRepositoryTests.MustExistAsync_ShouldNotThrowException&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=517ea31f_002D2fc9_002D4a51_002Db35c_002D64af739e69b2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Add_Player" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -52,8 +73,23 @@
     &lt;TestId&gt;NUnit3x::FEC70594-7B4C-4C7B-9549-5D870260B6FA::net9.0::Domain.Test.Features.Players.Add.AddPlayerHandlerTests.Should_Add_Player&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbe69a17_002Dbb14_002D4a55_002Db114_002D6853503347e7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_Add_Player #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="C:\Users\Compute\RiderProjects\BestFootballStats\Domain.Test" Presentation="&amp;lt;Domain.Test&amp;gt;" /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d451701f_002Dd85b_002D47bc_002D86d6_002De29d69744354/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MustExistAsync_ShouldNotThrowException #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e58cd07b_002D0e73_002D4cee_002D8689_002D68028dc92758/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MustExistAsync_ShouldThrowException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.MatchRepositoryTests.MustExistAsync_ShouldThrowException&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fbe69a17_002Dbb14_002D4a55_002Db114_002D6853503347e7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Add_Player #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Project Location="C:\Users\Compute\RiderProjects\BestFootballStats\Domain.Test" Presentation="&amp;lt;Domain.Test&amp;gt;" /&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Database.Conversions.PositionConversionTests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Repositories.LeagueRepositoryTests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::A7DA9489-ED1D-41CE-B0AB-8EAF1E16CE78::net9.0::Infrastructure.Test.Database.ApplicationContextTests&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>

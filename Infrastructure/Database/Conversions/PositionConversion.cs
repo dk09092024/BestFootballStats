@@ -19,7 +19,7 @@ public class PositionConversion : ValueConverter<Position, string>
     }
     private static Position ToDomain(string position)
     {
-        if (Enum.TryParse<Position>(position, out var domainPosition))
+        if (!Enum.TryParse<Position>(position, out var domainPosition))
         {
             throw new InvalidOperationException($"The value {position} is not a valid position.");
         }
