@@ -15,9 +15,9 @@ namespace FootBallStatsApi.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        private IMediator _mediator;
+        private Mediator _mediator;
 
-        public TeamController(IMediator mediator)
+        public TeamController(Mediator mediator)
         {
             _mediator = mediator;
         }
@@ -101,7 +101,7 @@ namespace FootBallStatsApi.Controllers
                 return NotFound(e);
             }
         }
-        [HttpPatch("link-player-to-team")]
+        [HttpPatch]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> LinkPlayerToTeam([FromBody] LinkPlayerToTeamDto dto)

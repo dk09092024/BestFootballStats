@@ -2,6 +2,6 @@
 
 public record struct LinkTeamDto
 {
-    public required Guid LeagueId { get; set; }
-    public required Guid TeamId { get; set; }
+    public Guid LeagueId { get; set; }
+    public Guid TeamId { get; set; }
 }

@@ -1,15 +1,9 @@
-using System.Reflection;
-using FootBallStatsApi.ApiExtensions;
-using FootBallStatsApi.ApiExtensions.DataSource;
-using FootBallStatsApi.ApiExtensions.MediatR;
-using Hangfire;
+using Infrastructure.ApiExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -21,12 +15,7 @@ builder.Services.AddHangfire();
 
 var app = builder.Build();
 
-app.UseHangfireDashboard("/hangfire");
-
 app.MapOpenApi();
-
-app.UseSwagger();
-app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

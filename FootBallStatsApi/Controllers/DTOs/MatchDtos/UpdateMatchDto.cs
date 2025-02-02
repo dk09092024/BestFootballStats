@@ -2,7 +2,7 @@
 
 public record struct UpdateMatchDto
 {
-    public required Guid Id { get; set; }
-    public required Guid HomeTeamId { get; set; }
-    public required Guid AwayTeamId { get; set; }
+    public Guid Id { get; set; }
+    public Guid HomeTeamId { get; set; }
+    public Guid AwayTeamId { get; set; }
 }

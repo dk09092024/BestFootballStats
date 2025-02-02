@@ -14,9 +14,9 @@ namespace FootBallStatsApi.Controllers
     [ApiController]
     public class PlayerController : ControllerBase
     {
-        private IMediator _mediator;
+        private Mediator _mediator;
 
-        public PlayerController(IMediator mediator)
+        public PlayerController(Mediator mediator)
         {
             _mediator = mediator;
         }
@@ -58,7 +58,7 @@ namespace FootBallStatsApi.Controllers
                 });
                 return Ok(new PlayerCreatedDto()
                 {
-                    Id = result.Id
+                    Id = result.PlayerId
                 });
             }
             catch (Exception e)

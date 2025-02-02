@@ -1,3 +1,4 @@
+using System.Net;
 using Domain.Features.Leagues.Add;
 using Domain.Features.Leagues.Delete;
 using Domain.Features.Leagues.Get;
@@ -6,6 +7,7 @@ using Domain.Features.Leagues.Update;
 using FluentValidation;
 using FootBallStatsApi.Controllers.DTOs.LeagueDtos;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FootBallStatsApi.Controllers
@@ -14,9 +16,9 @@ namespace FootBallStatsApi.Controllers
     [ApiController]
     public class LeagueController : ControllerBase
     {
-        private IMediator _mediator;
+        private Mediator _mediator;
 
-        public LeagueController(IMediator mediator)
+        public LeagueController(Mediator mediator)
         {
             _mediator = mediator;
         }
@@ -103,7 +105,7 @@ namespace FootBallStatsApi.Controllers
             }
         }
         
-        [HttpPatch("link-team")]
+        [HttpPatch("l/ink-team")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> LinkTeam([FromBody] LinkTeamDto dto)
