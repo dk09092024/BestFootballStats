@@ -58,7 +58,7 @@ namespace FootBallStatsApi.Controllers
                 });
                 return Ok(new PlayerCreatedDto()
                 {
-                    Id = result.PlayerId
+                    Id = result.Id
                 });
             }
             catch (Exception e)
