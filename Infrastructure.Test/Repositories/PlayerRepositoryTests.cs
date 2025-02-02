@@ -150,6 +150,7 @@ public class PlayerRepositoryTests
         await _context.SaveChangesAsync();
         await _playerRepository.LinkToTeam(player.Id, team.Id, CancellationToken.None);
         var linkedPlayer = await _context.Players.FindAsync(player.Id);
+        
         Assert.That(linkedPlayer.TeamId, Is.EqualTo(team.Id));
     }
     
@@ -166,7 +167,7 @@ public class PlayerRepositoryTests
         await _context.SaveChangesAsync();
         Assert.ThrowsAsync<EntityDoesNotExistExeption<PlayerRepository, Player>>(async () =>
         {
-            await _playerRepository.LinkToTeam(Guid.NewGuid(), Guid.NewGuid(), CancellationToken.None);
+            await _playerRepository.LinkToTeam(Guid.NewGuid(), team.Id, CancellationToken.None);
         });
     }
     
@@ -182,9 +183,15 @@ public class PlayerRepositoryTests
         };
         await _context.Players.AddAsync(player);
         await _context.SaveChangesAsync();
+        
+        var wrongTeamId = Guid.NewGuid();
+        
+        _teamRepository.Setup(x => x.MustExistAsync(wrongTeamId, It.IsAny<CancellationToken>()))
+            .ThrowsAsync(new EntityDoesNotExistExeption<TeamRepository, Team>(wrongTeamId));
+        
         Assert.ThrowsAsync<EntityDoesNotExistExeption<TeamRepository, Team>>(async () =>
         {
-            await _playerRepository.LinkToTeam(Guid.NewGuid(), Guid.NewGuid(), CancellationToken.None);
+            await _playerRepository.LinkToTeam(player.Id, wrongTeamId, CancellationToken.None);
         });
     }
     

@@ -59,8 +59,10 @@ public class PlayerRepository : IPlayerRepository
     public async Task LinkToTeam(Guid playerId, Guid teamId,CancellationToken cancellationToken)
     {
         await MustExistAsync(playerId,cancellationToken);
-        _teamRepository.MustExistAsync(teamId,cancellationToken);
-        await _context.Players.Where(x=> x.Id==playerId).ExecuteUpdateAsync(
-            x => x.SetProperty(x=> x.TeamId, teamId), cancellationToken);
+        await _teamRepository.MustExistAsync(teamId,cancellationToken);
+        
+        var player = await GetByIdAsync(playerId,cancellationToken);
+        player.TeamId = teamId;
+        await UpdateAsync(player,cancellationToken);
     }
 }

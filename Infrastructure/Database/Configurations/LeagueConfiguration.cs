@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations;
 
-public class LeagueConfiguration : IEntityTypeConfiguration<League>
+public static class LeagueConfiguration
 {
-    public void Configure(EntityTypeBuilder<League> builder)
+    public static void Configure(this EntityTypeBuilder<League> builder)
     {
         builder.ToTable("leagues");
         builder.HasBaseType<Entity>();

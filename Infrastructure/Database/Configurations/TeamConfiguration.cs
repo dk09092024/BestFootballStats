@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations;
 
-public class TeamConfiguration : IEntityTypeConfiguration<Team>
+public static class TeamConfiguration
 {
-    public void Configure(EntityTypeBuilder<Team> builder)
+    public static void Configure(this EntityTypeBuilder<Team> builder)
     {
         builder.ToTable("teams");
         builder.HasBaseType<Entity>();
@@ -17,11 +17,10 @@ public class TeamConfiguration : IEntityTypeConfiguration<Team>
             .HasColumnType("varchar")
             .HasMaxLength(100)
             .IsRequired();
-        
+
         builder.Property(x => x.LeagueId)
             .HasColumnName("league_id")
-            .HasColumnType("uuid")
-            .IsRequired();
+            .HasColumnType("uuid");
         
         builder.HasMany(x => x.Players)
             .WithOne()

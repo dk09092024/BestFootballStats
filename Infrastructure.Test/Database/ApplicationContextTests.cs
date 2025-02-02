@@ -61,7 +61,7 @@ public class ApplicationContextTests
         {
             Name = "Test",
             Position = (Position)1,
-            Id = default,
+            Id =  Guid.NewGuid(),
             CreatedAt = default
         }, CancellationToken.None);
         await _context.SaveChangesAsync();
@@ -75,7 +75,7 @@ public class ApplicationContextTests
         await _context.Teams.AddAsync(new Team
         {
             Name = "Test",
-            Id = default,
+            Id =  Guid.NewGuid(),
             CreatedAt = default
         }, CancellationToken.None);
         await _context.SaveChangesAsync();
@@ -89,17 +89,18 @@ public class ApplicationContextTests
         var homeTeam = new Team
         {
             Name = "TestHome",
-            Id = default,
+            Id = Guid.NewGuid(),
             CreatedAt = default
         }; 
         var awayTeam = new Team
         {
             Name = "TestAway",
-            Id = default,
+            Id =  Guid.NewGuid(),
             CreatedAt = default
         };
-        await _context.Teams.AddRangeAsync(homeTeam, awayTeam);
-        await _context.SaveChangesAsync();
+        await _context.Teams.AddAsync(homeTeam);
+        await _context.Teams.AddAsync(awayTeam);
+        await _context.SaveChangesAsync(CancellationToken.None);
         await _context.Matches.AddAsync(new Match
         {
             Id = default,

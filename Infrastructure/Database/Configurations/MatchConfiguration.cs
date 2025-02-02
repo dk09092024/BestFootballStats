@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations;
 
-public class MatchConfiguration : IEntityTypeConfiguration<Match>
+public static class MatchConfiguration
 {
-    public void Configure(EntityTypeBuilder<Match> builder)
+    public static void Configure(this EntityTypeBuilder<Match> builder)
     {
         builder.ToTable("matches");
         builder.HasBaseType<Entity>();
@@ -34,7 +34,7 @@ public class MatchConfiguration : IEntityTypeConfiguration<Match>
 
         builder.HasOne(x => x.AwayTeam)
             .WithMany()
-            .HasForeignKey(x => x.HomeTeamId)
+            .HasForeignKey(x => x.AwayTeamId)
             .OnDelete(DeleteBehavior.SetNull);
 
         builder.Navigation(x => x.HomeTeam)

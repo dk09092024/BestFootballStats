@@ -4,3 +4,9 @@
     build:
       context: .
       dockerfile: FootBallStatsApi/Dockerfile
+
+  footballapi:
+    image: footballapi
+    build:
+      context: .
+      dockerfile: FootballApi/Dockerfile

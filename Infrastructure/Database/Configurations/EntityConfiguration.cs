@@ -8,7 +8,9 @@ public class EntityConfiguration : IEntityTypeConfiguration<Entity>
 {
     public void Configure(EntityTypeBuilder<Entity> builder)
     {
+        
         builder.HasKey(x => x.Id);
+        
         builder.Property(x => x.Id)
             .HasColumnName("id")
             .HasColumnType("uuid")

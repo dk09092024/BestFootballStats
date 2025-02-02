@@ -279,15 +279,14 @@ public class MatchRepositoryTests
             AwayTeam = awayTeam
         };
         var id = await _matchRepository.AddAsync(match, CancellationToken.None);
-        await _matchRepository.UpdateAsync(new Match
-        {
-            Id = id,
-            CreatedAt = default,
-            HomeTeamId = homeTeam.Id,
-            AwayTeamId = awayTeam.Id,
-            HomeTeam = homeTeam,
-            AwayTeam = awayTeam
-        }, CancellationToken.None);
+        var loadMatch = await _matchRepository.GetByIdAsync(id, CancellationToken.None);
+        loadMatch.HomeTeamId = awayTeam.Id;
+        loadMatch.AwayTeamId = homeTeam.Id;
+        await _matchRepository.UpdateAsync(loadMatch, CancellationToken.None);
+        
+        var result = await _context.Matches.FirstAsync(x => x.Id == id);
+        Assert.That(result.HomeTeamId, Is.EqualTo(awayTeam.Id));
+        Assert.That(result.AwayTeamId, Is.EqualTo(homeTeam.Id));
     }
     
     

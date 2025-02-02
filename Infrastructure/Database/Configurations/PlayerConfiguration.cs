@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Database.Configurations;
 
-public class PlayerConfiguration : IEntityTypeConfiguration<Player>
+public static class PlayerConfiguration 
 {
-    public void Configure(EntityTypeBuilder<Player> builder)
+    public static void Configure(this EntityTypeBuilder<Player> builder)
     {
         builder.ToTable("players");
         builder.HasBaseType<Entity>();
@@ -25,10 +25,9 @@ public class PlayerConfiguration : IEntityTypeConfiguration<Player>
             .HasColumnType("varchar")
             .HasConversion<PositionConversion>()
             .IsRequired();
-        
+
         builder.Property(x => x.TeamId)
             .HasColumnName("team_id")
-            .HasColumnType("uuid")
-            .IsRequired();
-        }
+            .HasColumnType("uuid");
+    }
 }
