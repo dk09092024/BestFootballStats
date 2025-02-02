@@ -2,5 +2,5 @@
 
 public record struct CreateLeagueDto
 {
-    public string Name { get; set; }
+    public required string Name { get; set; }
 }

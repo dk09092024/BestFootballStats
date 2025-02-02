@@ -4,6 +4,6 @@ namespace FootBallStatsApi.Controllers.DTOs.PlayerDtos;
 
 public record struct CreatePlayerDto
 {
-    public string Name { get; set; }
-    public Position Position { get; set; }
+    public required string Name { get; set; }
+    public required Position Position { get; set; }
 }

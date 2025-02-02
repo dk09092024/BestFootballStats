@@ -1,8 +1,10 @@
-﻿namespace FootBallStatsApi.Controllers.DTOs.PlayerDtos;
+﻿using Domain.Models.Enum;
+
+namespace FootBallStatsApi.Controllers.DTOs.PlayerDtos;
 
 public record struct UpdatePlayerDto
 {
-    public Guid id;
-    public string Name { get; set; }
-    public int Position { get; set; }
+    public required Guid id;
+    public required string Name { get; set; }
+    public required Position Position { get; set; }
 }

@@ -101,7 +101,7 @@ namespace FootBallStatsApi.Controllers
                 return NotFound(e);
             }
         }
-        [HttpPatch]
+        [HttpPatch("link-player-to-team")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> LinkPlayerToTeam([FromBody] LinkPlayerToTeamDto dto)

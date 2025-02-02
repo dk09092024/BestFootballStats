@@ -2,6 +2,6 @@
 
 public record struct TeamCreatedDto
 {
-    public Guid Id { get; set; }
+    public required Guid Id { get; set; }
     public Uri TeamUri => new Uri($"/api/team/{Id}", UriKind.Relative);
 }

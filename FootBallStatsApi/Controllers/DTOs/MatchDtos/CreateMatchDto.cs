@@ -2,6 +2,6 @@
 
 public record struct CreateMatchDto
 {
-    public Guid HomeTeamId { get; set; }
-    public Guid AwayTeamId { get; set; }
+    public required Guid HomeTeamId { get; set; }
+    public required Guid AwayTeamId { get; set; }
 }
