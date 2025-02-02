@@ -1,10 +1,7 @@
-﻿using Domain.Models;
-using Domain.Repositories;
-using Domain.Repositories.Common;
+﻿using Domain.Repositories;
 using Infrastructure.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.ApiExtensions;
+namespace FootBallStatsApi.ApiExtensions;
 
 public static class RepositoryExtensions
 {

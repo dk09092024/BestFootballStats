@@ -1,4 +1,3 @@
-using System.Net;
 using Domain.Features.Leagues.Add;
 using Domain.Features.Leagues.Delete;
 using Domain.Features.Leagues.Get;
@@ -7,7 +6,6 @@ using Domain.Features.Leagues.Update;
 using FluentValidation;
 using FootBallStatsApi.Controllers.DTOs.LeagueDtos;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FootBallStatsApi.Controllers
@@ -16,9 +14,9 @@ namespace FootBallStatsApi.Controllers
     [ApiController]
     public class LeagueController : ControllerBase
     {
-        private Mediator _mediator;
+        private IMediator _mediator;
 
-        public LeagueController(Mediator mediator)
+        public LeagueController(IMediator mediator)
         {
             _mediator = mediator;
         }

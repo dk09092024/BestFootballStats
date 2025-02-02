@@ -2,13 +2,13 @@
 using FluentValidation.Results;
 using MediatR;
 
-namespace Infrastructure.ApiExtensions;
+namespace FootBallStatsApi.ApiExtensions.MediatR;
 
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
 {
-    private readonly IValidator<TRequest>[] _validators;
+    private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehavior(IValidator<TRequest>[] validators)
+    public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
     {
         _validators = validators;
     }

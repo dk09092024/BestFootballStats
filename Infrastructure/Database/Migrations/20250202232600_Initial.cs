@@ -19,13 +19,13 @@ namespace Infrastructure.Database.Migrations
                 schema: "BestFootballStatsApp",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
+                    created_at = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    updated_at = table.Column<DateTime>(type: "timestamp", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Entity", x => x.Id);
+                    table.PrimaryKey("PK_Entity", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,18 +33,18 @@ namespace Infrastructure.Database.Migrations
                 schema: "BestFootballStatsApp",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_leagues", x => x.Id);
+                    table.PrimaryKey("PK_leagues", x => x.id);
                     table.ForeignKey(
-                        name: "FK_leagues_Entity_Id",
-                        column: x => x.Id,
+                        name: "FK_leagues_Entity_id",
+                        column: x => x.id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -53,26 +53,26 @@ namespace Infrastructure.Database.Migrations
                 schema: "BestFootballStatsApp",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false),
                     league_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_teams", x => x.Id);
+                    table.PrimaryKey("PK_teams", x => x.id);
                     table.ForeignKey(
-                        name: "FK_teams_Entity_Id",
-                        column: x => x.Id,
+                        name: "FK_teams_Entity_id",
+                        column: x => x.id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_teams_leagues_league_id",
                         column: x => x.league_id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "leagues",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
                 });
 
@@ -81,34 +81,34 @@ namespace Infrastructure.Database.Migrations
                 schema: "BestFootballStatsApp",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
                     home_team_id = table.Column<Guid>(type: "uuid", nullable: false),
                     away_team_id = table.Column<Guid>(type: "uuid", nullable: false),
                     total_passes = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_matches", x => x.Id);
+                    table.PrimaryKey("PK_matches", x => x.id);
                     table.ForeignKey(
-                        name: "FK_matches_Entity_Id",
-                        column: x => x.Id,
+                        name: "FK_matches_Entity_id",
+                        column: x => x.id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_matches_teams_away_team_id",
                         column: x => x.away_team_id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_matches_teams_home_team_id",
                         column: x => x.home_team_id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
                 });
 
@@ -117,27 +117,27 @@ namespace Infrastructure.Database.Migrations
                 schema: "BestFootballStatsApp",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "varchar", maxLength: 100, nullable: false),
                     position = table.Column<string>(type: "varchar", nullable: false),
                     team_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_players", x => x.Id);
+                    table.PrimaryKey("PK_players", x => x.id);
                     table.ForeignKey(
-                        name: "FK_players_Entity_Id",
-                        column: x => x.Id,
+                        name: "FK_players_Entity_id",
+                        column: x => x.id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_players_teams_team_id",
                         column: x => x.team_id,
                         principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
                 });
 

@@ -15,9 +15,9 @@ namespace FootBallStatsApi.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        private Mediator _mediator;
+        private IMediator _mediator;
 
-        public TeamController(Mediator mediator)
+        public TeamController(IMediator mediator)
         {
             _mediator = mediator;
         }

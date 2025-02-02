@@ -1,18 +1,23 @@
-﻿using Domain.Features.Leagues.Add;
-using Domain.Features.Leagues.Get;
+﻿using Domain.Features.Players.Add;
 using FluentValidation;
 using MediatR;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.ApiExtensions;
+namespace FootBallStatsApi.ApiExtensions.MediatR;
 
 public static class MediatorExtension
 {
     public static void AddMediator(this IServiceCollection services)
     {
+        services.AddMediatR(configuration =>
+        {
+            configuration.RegisterServicesFromAssemblyContaining<AddPlayerHandler>();
+        });
+
+        
         AssemblyScanner
-            .FindValidatorsInAssembly(typeof(AddLeagueHandler).Assembly)
+            .FindValidatorsInAssembly(typeof(AddPlayerHandler).Assembly)
             .ForEach(result => services.AddTransient(result.InterfaceType, result.ValidatorType));
+        
         
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }

@@ -1,8 +1,7 @@
 ﻿using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.ApiExtensions;
+namespace FootBallStatsApi.ApiExtensions.DataSource;
 
 public static class ApplicationDatabaseExtension
 {

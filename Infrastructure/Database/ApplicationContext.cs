@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using Domain.Models.Common;
 using Infrastructure.Database.Configurations;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,11 +20,12 @@ public class ApplicationContext : DbContext
     {
         
     }
-    
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("BestFootballStatsApp");
-        
+
+        modelBuilder.Entity<Entity>().Configure();
         modelBuilder.Entity<League>().Configure();
         modelBuilder.Entity<Team>().Configure();
         modelBuilder.Entity<Player>().Configure();

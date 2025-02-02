@@ -1,7 +1,6 @@
 ﻿using Hangfire;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrastructure.ApiExtensions;
+namespace FootBallStatsApi.ApiExtensions;
 
 public static class HangfireExtension 
 {
