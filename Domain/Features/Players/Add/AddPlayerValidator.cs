@@ -18,10 +18,5 @@ public class AddPlayerValidator : AbstractValidator<AddPlayerRequest>
             .WithMessage("Position is required")
             .IsInEnum()
             .WithMessage("Position is invalid");
-        RuleFor(x => x.TeamId)
-            .NotEmpty()
-            .WithMessage("Team ID is required")
-            .MustAsync(async (x, cancellationToken) => await teamRepository.ExistsAsync(x,cancellationToken))
-            .WithMessage("Team does not exist");
     }
 }

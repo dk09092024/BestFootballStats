@@ -1,0 +1,6 @@
+﻿services:
+  footballstatsapi:
+    image: footballstatsapi
+    build:
+      context: .
+      dockerfile: FootBallStatsApi/Dockerfile

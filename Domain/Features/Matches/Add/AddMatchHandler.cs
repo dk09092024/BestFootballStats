@@ -1,6 +1,8 @@
 ﻿using System.Reflection.Metadata.Ecma335;
+using Domain.Features.Matches.ComputeStatistics;
 using Domain.Models;
 using Domain.Repositories;
+using Hangfire;
 using MediatR;
 
 namespace Domain.Features.Matches.Add;
@@ -8,6 +10,13 @@ namespace Domain.Features.Matches.Add;
 public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
 {
     private readonly IMatchRepository _matchRepository;
+    private Mediator _mediator;
+
+    public AddMatchHandler(Mediator mediator, IMatchRepository matchRepository)
+    {
+        _mediator = mediator;
+        _matchRepository = matchRepository;
+    }
 
     public async Task<AddMatchResult> Handle(AddMatchRequest request, CancellationToken cancellationToken)
     {
@@ -18,6 +27,6 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
             Id = default,
             CreatedAt = default
         };
-        return new(await _matchRepository.AddAsync(match,cancellationToken));
+        return new AddMatchResult(await _matchRepository.AddAsync(match, cancellationToken));
     }
 }

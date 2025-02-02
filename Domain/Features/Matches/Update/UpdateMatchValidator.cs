@@ -7,7 +7,7 @@ public class UpdateMatchValidator : AbstractValidator<UpdateMatchRequest>
 {
     public UpdateMatchValidator(IMatchRepository matchRepository)
     {
-        RuleFor(x => x.MatchId)
+        RuleFor(x => x.Id)
             .NotEmpty()
             .WithMessage("Match ID is required.")
             .MustAsync(async (x, cancellationToken) => await matchRepository.ExistsAsync(x,cancellationToken))

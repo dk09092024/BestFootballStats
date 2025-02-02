@@ -14,7 +14,7 @@ public class UpdateMatchHandler : IRequestHandler<UpdateMatchRequest>
 
     public async Task Handle(UpdateMatchRequest request, CancellationToken cancellationToken)
     {
-        var match = await _matchRepository.GetByIdAsync(request.MatchId,cancellationToken);
+        var match = await _matchRepository.GetByIdAsync(request.Id,cancellationToken);
         match.HomeTeamId = request.HomeTeamId;
         match.AwayTeamId = request.AwayTeamId;
         await _matchRepository.UpdateAsync(match,cancellationToken);

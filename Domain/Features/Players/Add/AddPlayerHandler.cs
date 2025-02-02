@@ -20,7 +20,6 @@ public class AddPlayerHandler : IRequestHandler<AddPlayerRequest, AddPlayerResul
         {
             Name = request.Name,
             Position = (Position)request.Position,
-            TeamId = request.TeamId,
             Id = default,
             CreatedAt = default
         };

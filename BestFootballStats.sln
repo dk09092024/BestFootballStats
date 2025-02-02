@@ -6,6 +6,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Test", "Domain.Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{18B7DCFE-1BF7-4A64-8D51-9C8CFDF4DD62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootBallStatsApi", "FootBallStatsApi\FootBallStatsApi.csproj", "{56002DF9-70FF-4954-92A5-1037E4FA6DB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36BE2754-F60C-4C70-9F79-40D7C379365F}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +31,9 @@ Global
 		{18B7DCFE-1BF7-4A64-8D51-9C8CFDF4DD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B7DCFE-1BF7-4A64-8D51-9C8CFDF4DD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18B7DCFE-1BF7-4A64-8D51-9C8CFDF4DD62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56002DF9-70FF-4954-92A5-1037E4FA6DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56002DF9-70FF-4954-92A5-1037E4FA6DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56002DF9-70FF-4954-92A5-1037E4FA6DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56002DF9-70FF-4954-92A5-1037E4FA6DB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
