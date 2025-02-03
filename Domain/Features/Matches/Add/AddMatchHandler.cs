@@ -12,17 +12,6 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
     private readonly IMatchRepository _matchRepository;
     private Mediator _mediator;
 
-    public AddMatchHandler(Mediator mediator, IMatchRepository matchRepository)
-    {
-        _mediator = mediator;
-        _matchRepository = matchRepository;
-    }
-
-    public AddMatchHandler(IMatchRepository matchRepository)
-    {
-        _matchRepository = matchRepository;
-    }
-
     public AddMatchHandler(IMatchRepository matchRepository)
     {
         _matchRepository = matchRepository;
