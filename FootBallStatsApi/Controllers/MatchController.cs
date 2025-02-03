@@ -67,11 +67,11 @@ namespace FootBallStatsApi.Controllers
                 return BadRequest(e);
             }
         }
-        private void StartCalculationForMatchStatisticsInHangfire(Guid matchId)
+        public void StartCalculationForMatchStatisticsInHangfire(Guid matchId)
         {
             BackgroundJob.Enqueue(() => CalculateMatchStatistics(matchId));
         }
-        private void CalculateMatchStatistics(Guid matchId)
+        public void CalculateMatchStatistics(Guid matchId)
         {
             _mediator.Send(new ComputeStatisticsRequest
             {

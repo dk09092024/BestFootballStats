@@ -1,7 +1,10 @@
-﻿namespace FootBallStatsApi.Controllers.DTOs.LeagueDtos;
+﻿using FootBallStatsApi.Controllers.DTOs.Common;
+
+namespace FootBallStatsApi.Controllers.DTOs.LeagueDtos;
 
 public record struct LeagueCreatedDto
 {
     public required Guid Id { get; set; }
-    public Uri LeagueUri => new Uri($"/api/league/{Id}", UriKind.Relative);
+    public Link[] Links => new Link[] { new Link($"/api/league/{Id}", "league", "GET") };
+    
 }

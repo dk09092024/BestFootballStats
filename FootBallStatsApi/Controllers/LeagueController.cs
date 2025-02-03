@@ -103,7 +103,7 @@ namespace FootBallStatsApi.Controllers
             }
         }
         
-        [HttpPatch("l/ink-team")]
+        [HttpPatch("link-team")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> LinkTeam([FromBody] LinkTeamDto dto)

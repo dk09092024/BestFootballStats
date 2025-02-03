@@ -1,4 +1,6 @@
-﻿namespace FootBallStatsApi.Controllers.DTOs.PlayerDtos;
+﻿using FootBallStatsApi.Controllers.DTOs.Common;
+
+namespace FootBallStatsApi.Controllers.DTOs.PlayerDtos;
 
 public record struct GetPlayerDto
 {
@@ -6,5 +8,5 @@ public record struct GetPlayerDto
     public required string Name { get; set; }
     public required Enum Position { get; set; }
     public Guid? TeamId { get; set; }
-    public Uri? TeamUri => TeamId.HasValue ? new Uri($"/api/team/{TeamId}", UriKind.Relative) : null;
+    public Link[] Links => new Link[] { new Link($"/api/player/{Id}", "player", "GET") };
 }
