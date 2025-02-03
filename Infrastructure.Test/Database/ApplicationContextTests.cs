@@ -61,6 +61,7 @@ public class ApplicationContextTests
         {
             Name = "Test",
             Position = (Position)1,
+
             Id =  Guid.NewGuid(),
             CreatedAt = default
         }, CancellationToken.None);
@@ -75,6 +76,7 @@ public class ApplicationContextTests
         await _context.Teams.AddAsync(new Team
         {
             Name = "Test",
+
             Id =  Guid.NewGuid(),
             CreatedAt = default
         }, CancellationToken.None);

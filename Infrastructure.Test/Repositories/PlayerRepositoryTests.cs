@@ -150,7 +150,6 @@ public class PlayerRepositoryTests
         await _context.SaveChangesAsync();
         await _playerRepository.LinkToTeam(player.Id, team.Id, CancellationToken.None);
         var linkedPlayer = await _context.Players.FindAsync(player.Id);
-        
         Assert.That(linkedPlayer.TeamId, Is.EqualTo(team.Id));
     }
     
