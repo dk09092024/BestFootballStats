@@ -11,16 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Database.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250202232600_Initial")]
+    [Migration("20250203023006_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasDefaultSchema("BestFootballStatsApp")
-                .HasAnnotation("ProductVersion", "9.0.1");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
             modelBuilder.Entity("Domain.Models.Common.Entity", b =>
                 {
@@ -39,7 +37,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Entity", "BestFootballStatsApp");
+                    b.ToTable("Entity");
 
                     b.UseTptMappingStrategy();
                 });
@@ -54,7 +52,7 @@ namespace Infrastructure.Database.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("name");
 
-                    b.ToTable("leagues", "BestFootballStatsApp");
+                    b.ToTable("leagues", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Match", b =>
@@ -77,7 +75,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasIndex("HomeTeamId");
 
-                    b.ToTable("matches", "BestFootballStatsApp");
+                    b.ToTable("matches", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Player", b =>
@@ -101,7 +99,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("players", "BestFootballStatsApp");
+                    b.ToTable("players", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Team", b =>
@@ -120,7 +118,7 @@ namespace Infrastructure.Database.Migrations
 
                     b.HasIndex("LeagueId");
 
-                    b.ToTable("teams", "BestFootballStatsApp");
+                    b.ToTable("teams", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.League", b =>

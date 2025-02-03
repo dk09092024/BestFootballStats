@@ -10,9 +10,9 @@ namespace Domain.Features.Matches.Add;
 public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
 {
     private readonly IMatchRepository _matchRepository;
-    private Mediator _mediator;
+    private IMediator _mediator;
 
-    public AddMatchHandler(Mediator mediator, IMatchRepository matchRepository)
+    public AddMatchHandler(IMediator mediator, IMatchRepository matchRepository)
     {
         _mediator = mediator;
         _matchRepository = matchRepository;

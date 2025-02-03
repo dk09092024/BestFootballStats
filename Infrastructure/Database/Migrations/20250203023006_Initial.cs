@@ -11,12 +11,8 @@ namespace Infrastructure.Database.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "BestFootballStatsApp");
-
             migrationBuilder.CreateTable(
                 name: "Entity",
-                schema: "BestFootballStatsApp",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -30,7 +26,6 @@ namespace Infrastructure.Database.Migrations
 
             migrationBuilder.CreateTable(
                 name: "leagues",
-                schema: "BestFootballStatsApp",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -42,7 +37,6 @@ namespace Infrastructure.Database.Migrations
                     table.ForeignKey(
                         name: "FK_leagues_Entity_id",
                         column: x => x.id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -50,7 +44,6 @@ namespace Infrastructure.Database.Migrations
 
             migrationBuilder.CreateTable(
                 name: "teams",
-                schema: "BestFootballStatsApp",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -63,14 +56,12 @@ namespace Infrastructure.Database.Migrations
                     table.ForeignKey(
                         name: "FK_teams_Entity_id",
                         column: x => x.id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_teams_leagues_league_id",
                         column: x => x.league_id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "leagues",
                         principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
@@ -78,7 +69,6 @@ namespace Infrastructure.Database.Migrations
 
             migrationBuilder.CreateTable(
                 name: "matches",
-                schema: "BestFootballStatsApp",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -92,21 +82,18 @@ namespace Infrastructure.Database.Migrations
                     table.ForeignKey(
                         name: "FK_matches_Entity_id",
                         column: x => x.id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_matches_teams_away_team_id",
                         column: x => x.away_team_id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
                         principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_matches_teams_home_team_id",
                         column: x => x.home_team_id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
                         principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
@@ -114,7 +101,6 @@ namespace Infrastructure.Database.Migrations
 
             migrationBuilder.CreateTable(
                 name: "players",
-                schema: "BestFootballStatsApp",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -128,14 +114,12 @@ namespace Infrastructure.Database.Migrations
                     table.ForeignKey(
                         name: "FK_players_Entity_id",
                         column: x => x.id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "Entity",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_players_teams_team_id",
                         column: x => x.team_id,
-                        principalSchema: "BestFootballStatsApp",
                         principalTable: "teams",
                         principalColumn: "id",
                         onDelete: ReferentialAction.SetNull);
@@ -143,25 +127,21 @@ namespace Infrastructure.Database.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_matches_away_team_id",
-                schema: "BestFootballStatsApp",
                 table: "matches",
                 column: "away_team_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_matches_home_team_id",
-                schema: "BestFootballStatsApp",
                 table: "matches",
                 column: "home_team_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_players_team_id",
-                schema: "BestFootballStatsApp",
                 table: "players",
                 column: "team_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_teams_league_id",
-                schema: "BestFootballStatsApp",
                 table: "teams",
                 column: "league_id");
         }
@@ -170,24 +150,19 @@ namespace Infrastructure.Database.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "matches",
-                schema: "BestFootballStatsApp");
+                name: "matches");
 
             migrationBuilder.DropTable(
-                name: "players",
-                schema: "BestFootballStatsApp");
+                name: "players");
 
             migrationBuilder.DropTable(
-                name: "teams",
-                schema: "BestFootballStatsApp");
+                name: "teams");
 
             migrationBuilder.DropTable(
-                name: "leagues",
-                schema: "BestFootballStatsApp");
+                name: "leagues");
 
             migrationBuilder.DropTable(
-                name: "Entity",
-                schema: "BestFootballStatsApp");
+                name: "Entity");
         }
     }
 }

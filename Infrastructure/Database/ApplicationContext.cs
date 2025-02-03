@@ -23,8 +23,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema("BestFootballStatsApp");
-
         modelBuilder.Entity<Entity>().Configure();
         modelBuilder.Entity<League>().Configure();
         modelBuilder.Entity<Team>().Configure();
