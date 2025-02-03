@@ -1,5 +1,6 @@
 using Domain.Features.Matches.Add;
 using Domain.Repositories;
+using MediatR;
 using Moq;
 using Match = Domain.Models.Match;
 
@@ -9,12 +10,14 @@ public class AddMatchHandlerTests
 {
     private AddMatchHandler _handler;
     private Mock<IMatchRepository> _matchRepository;
+    private Mock<Mediator> _mediator;
 
     [SetUp]
     public void SetUp()
     {
         _matchRepository = new Mock<IMatchRepository>();
-        _handler = new AddMatchHandler(_matchRepository.Object);
+        _mediator = new Mock<Mediator>();
+        _handler = new AddMatchHandler(_mediator.Object, _matchRepository.Object);
     }
     
     [Test]

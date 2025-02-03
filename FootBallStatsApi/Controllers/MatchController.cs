@@ -56,7 +56,6 @@ namespace FootBallStatsApi.Controllers
                     HomeTeamId = dto.HomeTeamId,
                     AwayTeamId = dto.AwayTeamId,
                 });
-                StartCalculationForMatchStatisticsInHangfire(result.Id);
                 return Ok(new MatchCreatedDto
                 {
                     Id = result.Id
@@ -67,17 +66,7 @@ namespace FootBallStatsApi.Controllers
                 return BadRequest(e);
             }
         }
-        public void StartCalculationForMatchStatisticsInHangfire(Guid matchId)
-        {
-            BackgroundJob.Enqueue(() => CalculateMatchStatistics(matchId));
-        }
-        public void CalculateMatchStatistics(Guid matchId)
-        {
-            _mediator.Send(new ComputeStatisticsRequest
-            {
-                MatchId = matchId
-            });
-        }
+        
         
         [HttpPatch]
         [ProducesResponseType(StatusCodes.Status200OK)]

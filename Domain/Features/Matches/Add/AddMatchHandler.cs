@@ -17,12 +17,7 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
         _mediator = mediator;
         _matchRepository = matchRepository;
     }
-
-    public AddMatchHandler(IMatchRepository matchRepository)
-    {
-        _matchRepository = matchRepository;
-    }
-
+    
     public async Task<AddMatchResult> Handle(AddMatchRequest request, CancellationToken cancellationToken)
     {
         var match = new Match
@@ -32,6 +27,23 @@ public class AddMatchHandler : IRequestHandler<AddMatchRequest, AddMatchResult>
             Id = default,
             CreatedAt = default
         };
-        return new AddMatchResult(await _matchRepository.AddAsync(match, cancellationToken));
+        var matchId = await _matchRepository.AddAsync(match, cancellationToken);
+        StartCalculationForMatchStatisticsInHangfire(matchId);
+        return new AddMatchResult
+        {
+            Id = matchId
+        };
+    }
+    
+    public void StartCalculationForMatchStatisticsInHangfire(Guid matchId)
+    {
+        BackgroundJob.Enqueue(() => CalculateMatchStatistics(matchId));
+    }
+    public void CalculateMatchStatistics(Guid matchId)
+    {
+        _mediator.Send(new ComputeStatisticsRequest
+        {
+            MatchId = matchId
+        });
     }
 }
